@@ -15,7 +15,9 @@ export const generateImageToolFunction: ToolFn<z.infer<typeof generateImageToolD
         prompt: toolArgs.prompt,
         n: 1,
         size: "1024x1024",
-    })
+        model: "dall-e-3",
+        quality: "standard",
+    }) // costs 0.04$ per image
 
     const imageUrl = response.data?.[0].url || 'ERROR OCCURED WHILE GENERATING IMAGE'
 
